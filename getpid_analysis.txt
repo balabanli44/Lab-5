@@ -1,0 +1,19 @@
+
+Fork Analysis for getpid_E.cpp
+==============================
+
+1. How many times was fork() executed?
+   - Fork is executed 2 times in the program (inside the for loop).
+
+2. How many processes and why?
+   - The program starts with 1 process (the parent).
+   - After the first fork, there are 2 processes (1 parent + 1 child).
+   - After the second fork, each of the 2 processes forks again, resulting in 4 total processes.
+   - Total processes = 4.
+
+3. How many printf and why?
+   - The printf statement is executed by each process every time the loop runs.
+   - Initial: 1 printf for the parent.
+   - After the first fork: 2 printf statements (1 for parent, 1 for child).
+   - After the second fork: 4 printf statements (1 for each process).
+   - Total printf calls = 1 + 2 + 4 = 7.
